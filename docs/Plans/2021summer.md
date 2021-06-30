@@ -25,3 +25,9 @@
 - Build-Your-Own-X
 
 ## Schedule
+
+### First Month
+
+### Whole Summer Vacation
+
+### Next Semester
