@@ -5,7 +5,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'My Personal Website',
   tagline: 'Dinosaurs are cool',
-  url: 'https://github.com/woodcutter-eric/woodcutter-eric.github.io',
+  url: 'https://github.com/woodcutter-eric/woodcutter-eric.github.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -92,13 +92,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/woodcutter-eric/woodcutter-eric.github.io',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/woodcutter-eric/woodcutter-eric.github.io',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
