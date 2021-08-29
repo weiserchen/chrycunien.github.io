@@ -1,20 +1,12 @@
 # Vim Setup
 
 ## Settings
-1. Go to [this website](https://github.com/sickill/vim-monokai) and download the font `monokai`.
-2. Put the following configuration in `~/.vimrc`
+-  Go to [this website](https://github.com/sickill/vim-monokai) and download the font `monokai`.
+-  Put the following configuration in `~/.vimrc`
+- Simplified Version
 ```bash
-"################### Magic vimrc ###################
-" ctrl+n Enable/disable mouse
-" ctrl+b Switch to text/binary
-" ctrl+j To utf-8 file
-" ctrl+t Convert tab to spaces
-" ctrl+l Toggle line breaking
-" ctrl+f Switch to full/simple
- 
-"#######################################################
 set nocompatible
- 
+
 "#######################################################
 syntax enable
 set number
@@ -22,7 +14,8 @@ set noruler
 set ignorecase
 set smartcase
 set incsearch
-set cindent
+set ai
+set si
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -36,25 +29,69 @@ set showmode
 set nowrap
 set autowrite
 set mouse=a
- 
-"#######################################################
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set wildmenu
+set lbr
+"
+""#######################################################
 " Color
 set t_Co=256
 " colo torte
 set cursorline
 " set cursorcolumn
 set hlsearch
-" hi CursorLine cterm=none ctermbg=DarkMagenta ctermfg=White
-" hi CursorColumn cterm=none ctermbg=DarkMagenta ctermfg=White
-" hi Search cterm=reverse ctermbg=none ctermfg=none
 "set background=dark
+set scrolloff=5
+
+"#######################################################
+" statusline
+set laststatus=2
+```
+- Complete Version (At least for mac)
+```bash
+"#######################################################
+set nocompatible
+
+"#######################################################
+syntax enable
+set number
+set noruler
+set ignorecase
+set smartcase
+set incsearch
+set ai
+set si
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set confirm
+set backspace=indent,eol,start
+set history=500
+set showcmd
+set showmode
+set nowrap
+set autowrite
+set mouse=a
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set wildmenu
+set lbr
+
+"#######################################################
+" Color
+set t_Co=256
+set cursorline
+set hlsearch
 set guifont=Fira\ Code:h12
-set lines=50 columns=135
-set scrolloff=10
-set list listchars=tab:\:\ ,trail:·,extends:?,precedes:?,nbsp:× 
-" hi LineNr cterm=bold ctermfg=DarkGrey ctermbg=NONE
-" hi CursorLineNr cterm=bold ctermfg=Green ctermbg=NONE
-colorscheme monokai
+set scrolloff=5
+set list listchars=tab:\:\ ,trail:·,extends:?,precedes:?,nbsp:×
+" To use monokai, uncomment this line
+" colorscheme monokai
 
 "#######################################################
 " statusline
@@ -84,7 +121,7 @@ function FileSize()
         return "[" . (bytes / 1048576) . "MB]"
     endif
 endfunction
- 
+
 "#######################################################
 " encode
 if has("multi_byte")
@@ -92,84 +129,6 @@ if has("multi_byte")
 else
     echoerr "If +multi_byte is not included, you should compile Vim with big features."
 endif
- 
-"#######################################################
-" shortcut
-" Toggle mouse
-map <C-n> :call SwitchMouseMode()<CR>
-map! <C-n> <Esc>:call SwitchMouseMode()<CR>
-function SwitchMouseMode()
-    if (&mouse == "a")
-        let &mouse = ""
-        echo "Mouse is disabled."
-    else
-        let &mouse = "a"
-        echo "Mouse is enabled."
-    endif
-endfunction
-" Toggle text/binary
-map <C-b> :call SwitchTextBinaryMode()<CR>
-map! <C-b> <Esc>:call SwitchTextBinaryMode()<CR>
-function SwitchTextBinaryMode()
-    if (&binary == 0)
-        set binary
-        set noeol
-        echo "Switch to binary mode."
-    else
-        set nobinary
-        set eol
-        echo "Switch to text mode."
-    endif
-endfunction
-" To utf-8 file
-map <C-j> :call ToUTF8()<CR>
-map! <C-j> <Esc>:call ToUTF8()<CR>
-function ToUTF8()
-    if (&fileencoding == "utf-8")
-        echo "It is already UTF-8."
-    else
-        let &fileencoding="utf-8"
-        echo "Convert to UTF-8."
-    endif
-    let &ff="unix"
-endfunction
-" Convert tab to spaces
-map <C-t> :call TabToSpaces()<CR>
-map! <C-t> <Esc>:call TabToSpaces()<CR>
-function TabToSpaces()
-    retab
-    echo "Convert tab to spaces."
-endfunction
-" Toggle line breaking
-map <C-l> :call SwitchLineBreakingMode()<CR>
-map! <C-l> <Esc>:call SwitchLineBreakingMode()<CR>
-function SwitchLineBreakingMode()
-    if (&wrap == 0)
-        set wrap
-        echo "Switch to line breaking mode."
-    else
-        set nowrap
-        echo "Switch to one line mode."
-    endif
-endfunction
-" Switch to full/simple
-map <C-f> :call SwitchFullSimpleMode()<CR>
-map! <C-f> <Esc>:call SwitchFullSimpleMode()<CR>
-function SwitchFullSimpleMode()
-    if (&mouse == "a")
-        let &mouse = ""
-        set nocindent
-        set nonumber
-        set wrap
-        echo "Switch to simple mode.(nomouse, nonumber, nocindent, wrap)"
-    else
-        let &mouse = "a"
-        set cindent
-        set number
-        set nowrap
-        echo "Switch to full mode.(mouse, number, cindent, nowrap)"
-    endif
-endfunction
 ```
 
 ## Reference

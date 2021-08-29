@@ -14,11 +14,7 @@ module.exports = {
   projectName: 'woodcutter-eric.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: 'Home',
       items: [
         {
           type: 'doc',
@@ -82,6 +78,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ['docker', 'elixir'],
     },
   },
   presets: [
@@ -91,14 +88,12 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/woodcutter-eric/woodcutter-eric.github.io',
+          editUrl: undefined,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/woodcutter-eric/woodcutter-eric.github.io',
+          editUrl: undefined,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
