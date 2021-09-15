@@ -5,13 +5,17 @@
 ```bash
 $ brew install --cask iterm2
 ```
-2. Setup colors. (Follow the instruction of this [website](https://iterm2colorschemes.com/))
-3. Setup hotkey
+2. Install colors. (Follow the instruction of this [website](https://iterm2colorschemes.com/))
+3. Setup colors
+    - Go to `Preference` -> `Profile` -> `Color`
+    - Import color scheme downloaded in previous step
+    - Choose the color you want (I choose `OneHalfDark`)
+4. Setup hotkey
     - Go to `Preference` -> `Keys` -> `HotKey` -> `Create a Dedicated HotKey Window`
     - Press `HotKey` field to start recording
     - I choose `option` +`3` as my hotkey
     - You have to prevent hotkey collison or trap in you OS or another softwares 
-4. Then you can go to the `Profile` -> `HotKey Window` to customize your hotkey window
+5. Then you can go to the `Profile` -> `HotKey Window` to customize your hotkey window
 
 ## Install Zim
 ```bash
@@ -33,7 +37,7 @@ $ zimfw install
 3. After installing, restart the iterm2
 4. When you restart, you will see p10k configure program automatically pop up, follow the instruction.
     - It will ask you to install some additional font
-    - After installation, please **fully** restart or it will not take effect
+    - After installation, please `fully` restart or it will not take effect
     - Once it show up some icon (like diamon, lock, ...), it means you successfully install the font
     - The last step is to follow the further instructions, and choose whatever setting you like
 5. Add font to VSCode
