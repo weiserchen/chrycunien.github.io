@@ -1,8 +1,8 @@
 # Tool List
 
-I list several common tools that are useful for developers:
+I list several common tools that are useful for developers.
 
-Required:
+## Required
 - Brew
 - Virtualbox
 - VMware
@@ -25,20 +25,15 @@ Required:
 - Chrome
 - Python (pyenv)
 - Elixir
-- Setup C++ compiler to g++ (instead of Clang)
+- Install gcc compiler
 - XCocde select install
 - Vim (add some plugin, like "airline", "nerdtree")
 - NodeJS
 - Git
 
-
-Optional:
-- HP Utility & HP Easy Scan
+## Optional
 - MySQL
 - MongoDB
 - Neo4j
 - ETS
 - Hola VPN
-
-
-
