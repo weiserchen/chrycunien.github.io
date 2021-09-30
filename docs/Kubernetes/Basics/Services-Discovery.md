@@ -105,7 +105,6 @@ metadata:
     tier: support
 spec:
   containers:
-
     - name: counter
       image: lrakai/microservices:counter-v1
       env:

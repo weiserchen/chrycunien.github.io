@@ -32,7 +32,7 @@ spec:
     - Use `kubectl get services` to find the service information
     - Like `<pod>:<node>/<protocol>` => `80:31635/TCP`
     - The range is between `32000 ~ 32767`
-    - Each node may have different port
+    - Each node will have the same port open for this service, and the traffic will be redirected to the service
     - This mapping allows each node to access the pod using this service
 - Endpoints: all pods that are selected with the same label
 ```bash
