@@ -27,7 +27,7 @@ $ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh 
 ```
 $ vim ~/.zimrc
 
-# Then add the following line to bottom
+# Then add the following line to bottom of ~/.zimrc
 # `zmodule romkatv/powerlevel10k`
 ```
 2. Install zmodule
