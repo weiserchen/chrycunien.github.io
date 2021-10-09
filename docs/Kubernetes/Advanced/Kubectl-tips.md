@@ -41,6 +41,9 @@ echo "source <(kubectl completion zsh)" >> ~/.zshrc
 ```
 - Get Labels
 ```bash
+# Get all resources
+kubectl get all
+
 # Get pods of all namespaces
 kubectl get pods --all-namespaces
 
