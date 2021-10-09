@@ -30,7 +30,7 @@ This is written for Mac.
 ## Python
 
 ### Setup Environment
-1. Install Anaconda
+1. Install Miniconda
 2. Create virtual environment
 ```bash
 $ conda create -n submarine-dev python=3.6
