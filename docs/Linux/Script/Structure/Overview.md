@@ -34,5 +34,25 @@ $ ./test.sh
 $ source ./test.sh
 ```
 
+## Get information
+```bash
+# Get current working directory
+$ pwd
+
+# Check whether this command is built-in
+$ type -a <command>
+
+# Get built-in command help
+$ help <command>
+
+# Get non built-in command help
+# man: manual
+$ man <command>
+
+# You can find many environmental variables in bash manual page
+$ man bash
+# And then search for a env variable you want to search for
+```
+
 
 ## References

@@ -60,6 +60,13 @@ passwd -e ${USER_NAME}
 $ sudo ./create-user.sh
 ```
 
+## Check the user is created
+```bash
+$ cat /etc/passwd
+# Or
+$ tail /etc/passwd
+```
+
 ## Switch to a new account
 - We are not using `sudo` because vagrant is just a normal user, we can't trust it.
 - If you use `sudo` to login, it will require no password
@@ -95,47 +102,6 @@ echo ${PASSWORD} | passwd --stdin ${USER_NAME}
 
 # Force password change on first login.
 passwd -e ${USER_NAME}
-```
-
-## Another example
-```bash
-#!/bin/bash
-
-# Make sure this script is executed by root
-if [[ "${UID}" -ne 0 ]]
-then
-  echo 'You are not root'
-  exit 1
-fi
-
-# Enter username
-read -p "Enter your username: " USER_NAME
-
-# Enter name for the account
-read -p "Enter your name in charge: " COMMENT
-
-# Enter password
-read -p "Enter your password: " PASSWORD
-
-# Create a new user
-useradd -c "${COMMENT}" -m "${USER_NAME}"
-
-# Set default password
-echo ${PASSWORD} | passwd --stdin ${USER_NAME}
-
-# Force password change on first login.
-passwd -e ${USER_NAME}
-
-# Check if the creation of user success or not
-if [[ "${?}" -ne 0 ]]
-then
-  echo 'Your account cannot be created!'
-  exit 1
-fi
-
-echo "Your username is: ${USER_NAME}"
-echo "Your default password is: ${PASSWORD}"
-echo "Your host is: ${HOSTNAME}"
 ```
 
 ## References
