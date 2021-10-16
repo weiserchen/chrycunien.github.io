@@ -11,7 +11,7 @@ $ chsh -s $(which zsh)
 ## Zim Setup
 1. Install zim
 ```bash
-$ $ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+$ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 ```
 2. Run the following commands
 ```vim

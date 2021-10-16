@@ -12,7 +12,7 @@
 set nocompatible
 syntax enable
 set number
-set noruler
+set ruler
 set ignorecase
 set smartcase
 set incsearch
@@ -43,11 +43,6 @@ set scrolloff=5
 set laststatus=2
 ```
 - Plugins
-    - Make sure you install some vim requirement (for ubuntu)
-    ```bash
-    $ sudo apt-get install vim-gui-common
-    $ sudo apt-get install vim-runtime
-    ```
     - Install Vim-Plug
     ```bash
     $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -55,7 +50,7 @@ set laststatus=2
     ```
     - Add configuration in `~/.vimrc`
     ```vim
-    call plug#begin()
+    call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-sensible'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
