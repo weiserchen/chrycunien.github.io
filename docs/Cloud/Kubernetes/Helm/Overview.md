@@ -2,7 +2,7 @@
 
 - Helm is the application package manager for kubernetes.
 
-![Helm](../../../static/img/kubernetes/helm-overview.png)
+![Helm](../../../../static/img/kubernetes/helm-overview.png)
 
 
 ## Why Helm?
@@ -43,7 +43,7 @@
 - Directly talk to the API server after helm 3 (Bucause of the use of RBAC)
 - The same way that kubectl talk to API server
 - The templates are rendered on the client side to raw kubernetes manifest file
-![Helm3 architeuctre](../../../static/img/kubernetes/helm-3-architecture.png)
+![Helm3 architeuctre](../../../../static/img/kubernetes/helm-3-architecture.png)
 
 ## Installation
 ```bash

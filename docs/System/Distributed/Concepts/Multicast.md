@@ -16,7 +16,7 @@ In this node, we introduced 3 basic means of broadcasting: tree-based, flooding-
 ## Tree-based Method
 Figure 1. Tree-based Multicast
 
-![tree-based](../../../static/img/dist-sys/tree-based.png)
+![tree-based](../../../../static/img/dist-sys/tree-based.png)
 
 In the tree-based multicasting, we build an minimal spanning tree for a message group, where root is the sender. When the sender want to multicast a messge, it has to first establish this tree. 
 
