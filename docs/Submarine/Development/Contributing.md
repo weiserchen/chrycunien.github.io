@@ -25,6 +25,7 @@ git remote -v
 cd submarine
 
 # Step 1. Make your local master up-to-date
+# On master branch
 git checkout master
 git fetch upstream
 git rebase upstream/master
