@@ -2,7 +2,7 @@
 
 ## Factory 
 This code snippet demostrate the use of factory function.
-```golang
+```go
 type Person struct {
   Name string
   Age int
@@ -29,7 +29,7 @@ func main_() {
 ### Functional
 - This code snippet use closure to create a factory generator
 - It's more succint and elegant
-```golang
+```go
 type Employee struct {
   Name, Position string
   AnnualIncome int
@@ -58,7 +58,7 @@ func main() {
 - The code snippet use a new type to implement a factory generator
 - However, it usually need an additional interface when passed into another function
 - Because you still need to specify the concrete type, its use case is limited
-```golang
+```go
 type Employee struct {
   Name, Position string
   AnnualIncome int
@@ -94,7 +94,7 @@ func main() {
 
 ## Prototype Factory
 - This code snippet create an object by condition.
-```golang
+```go
 type Employee struct {
   Name, Position string
   AnnualIncome int

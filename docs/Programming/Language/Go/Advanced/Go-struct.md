@@ -8,7 +8,7 @@ In this article, I write down some challenge features that you may face when rea
 Typically, to decouple the details, we would separate the interface and the implementation. In Go, which means separate `interface` and `struct`. We will create a general interface for a specific purpose, then create multiple structs that implements this interface and sometimes we will swap different implementation for different use.
 
 ## Struct Pointer
-```golang
+```go
 p := &Person{}
 ```
 Instead of binding `p` to a concrete `Person`, we bind it to a reference of a `Person`. This allows us to have a unique reference to pass around several functions, which can be helpful if you want to maintain the state of a struct.
@@ -17,7 +17,7 @@ By the way, Go allows user to use `p.x` as a short cut of `(*p).x`.
 
 ## Embedded Struct
 You can embed type directly without supplying their name, this is called anonymous or embedded field. 
-```golang
+```go
 type ReadWriter interface {
     Reader
     Writer
@@ -26,7 +26,7 @@ type ReadWriter interface {
 
 ## Duplicated Field
 This code snippet will not compile because there are duplicated field in a struct.
-```golang
+```go
 type T struct {
     http.Request // field name is "Request"
     Request // field name is "Request"
@@ -37,7 +37,7 @@ type T struct {
 The field that belongs to the embedded element will be **prompted** if it doesn't duplicate with a field in the parent struct.(Compile error) Basic types like `string` have no "prompted field" to expose ,but it still valid to use `obj.string` to access the field , see https://stackoverflow.com/a/28014640
 
 However, in the initialization, you have to **explicitly** specify the embedded object.
-```golang
+```go
 // https://medium.com/golangspec/promoted-fields-and-methods-in-go-4e8d7aefb3e3
 type Person struct {
     name string
@@ -66,7 +66,7 @@ func main() {
     fmt.Printf("%+v", record)
 }
 ```
-```golang
+```go
 func main() {
     // Not compile!
     record := Record{
@@ -101,7 +101,7 @@ func main() {
 
 
 ```
-```golang
+```go
 func main() {
     record := Record{
         Person: Person{

@@ -2,7 +2,7 @@
 
 ## String Builder
 This code snippets use string builder to construct a html document.
-```golang
+```go
 func main() {
   hello := "hello"
   sb := strings.Builder{}
@@ -27,7 +27,7 @@ func main() {
 
 ## HTML builder
 This code snippet create a html builder to create a html document. You can see that it's much more simpler to construct a html file that using the basix string builder (although it use string builder behind the scene).
-```golang
+```go
 const (
   indentSize = 2
 )
@@ -101,7 +101,7 @@ func main() {
 Sometimes we have many field to initialize, we can separate them into multiple builder to make the initialization easier.
 
 First, we create a `Person` struct and a `PersonBuilder` and add some utility functions to it.
-```golang
+```go
 type Person struct {
   // Address
   StreetAddress, Postcode, City string
@@ -132,7 +132,7 @@ func (it *PersonBuilder) Lives() *PersonAddressBuilder {
 }
 ```
 And actually, because `PersonJobBuilder` and `PersonAddressBuilder` just like a `PersonBuilder` (see Go's struct prompted fields for further understanding.) They can use functions defined in `PersonBuilder`, which acts as inheritance features in OOP language.
-```golang
+```go
 type PersonJobBuilder struct {
   PersonBuilder
 }
@@ -155,7 +155,7 @@ func (pjb *PersonJobBuilder) Earning(
   return pjb
 }
 ```
-```golang
+```go
 type PersonAddressBuilder struct {
   PersonBuilder
 }
@@ -178,7 +178,7 @@ func (it *PersonAddressBuilder) WithPostcode(
   return it
 }
 ```
-```golang
+```go
 func main() {
   pb := NewPersonBuilder()
   pb.
@@ -197,7 +197,7 @@ func main() {
 
 ## Force to use builder
 The email builder provides a `SendEmail` wrapper function to guard against the direct creation without using the builder.
-```golang
+```go
 type email struct {
 	from, to, subject, body string
 }
@@ -252,7 +252,7 @@ func main() {
 
 ## Functional Builder
 This builder demostrate the builder using functional style.
-```golang
+```go
 type Person struct {
   name, position string
 }
@@ -301,7 +301,7 @@ Therefore, we will focus on how to reuse codes in the following examples.
 ### Examples
 This example use an interface `BuildProcess` to abstract the construction of a vehicle. By adding a `ManufacturingDirector`, we reuse the construction process and only need to pass a different builder to this director. Then we can make a car in a simple way.
 
-```golang
+```go
 type BuildProcess interface {
 	SetWheels() BuildProcess
 	SetSeats() BuildProcess
@@ -378,7 +378,7 @@ func (b *BikeBuilder) GetVehicle() VehicleProduct {
 }
 ```
 Demo:
-```golang title="builder_test.go"
+```go title="builder_test.go"
 manufacturingComplex := ManufacturingDirector{}
 
 carBuilder := &CarBuilder{}
