@@ -1,5 +1,47 @@
 # Some Question
 
+## 10/24
+- `server-core/.../database/utils/MyBatisUtil`
+    - `checkCalledByTestMethod` doesn't seem to take effect
+    - Solved: the `SubmarineConfiguration.getInstance()` will create a singleton
+- `server-core/.../environment/database/mappers/Environment mapper`
+    - Why we put these three functions in api rather than core?
+    - Is it some historical reasons?
+```java
+import org.apache.submarine.server.api.environment.Environment;
+import org.apache.submarine.server.api.environment.EnvironmentId;
+import org.apache.submarine.server.api.spec.EnvironmentSpec;
+```
+- SUBMARINE-1030
+    - What the difference between 3 styles?
+- `server-core/.../experiment/database/ExperimentManager`:
+    - In `createExperiment`, it is weird to first populate the spec and then remove the spec. Plus, it seems to set some fields again provided a spec that is passed into the creation process before.
+```java
+spec.getMeta().getEnvVars().put(RestConstants.JOB_ID, id.toString());
+spec.getMeta().getEnvVars().put(RestConstants.SUBMARINE_TRACKING_URI, url);
+spec.getMeta().getEnvVars().put(RestConstants.LOG_DIR_KEY, RestConstants.LOG_DIR_VALUE);
+
+String lowerName = spec.getMeta().getName().toLowerCase();
+spec.getMeta().setName(lowerName);
+spec.getMeta().setExperimentId(id.toString());
+
+Experiment experiment = submitter.createExperiment(spec);
+experiment.setExperimentId(id);
+
+spec.getMeta().getEnvVars().remove(RestConstants.JOB_ID);
+spec.getMeta().getEnvVars().remove(RestConstants.SUBMARINE_TRACKING_URI);
+spec.getMeta().getEnvVars().remove(RestConstants.LOG_DIR_KEY);
+
+experiment.setSpec(spec);
+```
+- server-core mappers and service
+    - I find many of the entity share the same feature, like select, update, create, ...
+    - Why we don't provide a general interface to generalize the mappers in the server
+    - Also, the service may be generalized, too
+    - Is this related to somethings like refactor or not?
+    - What is the actual model of server? `model-mapper-service`?
+    - Or we will use hibernate later so this doesn't matter
+
 ## 10/15
 
 ### The clarification of what our operator do
