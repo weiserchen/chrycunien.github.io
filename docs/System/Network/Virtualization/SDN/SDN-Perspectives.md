@@ -5,7 +5,7 @@
 - API for table-based switch control (e.g. OpenFlow), defining what is controllable and what is not
 - Protocol for communicating with controller
 
-![data-plane-switches](../../../../../static/img/network-virtualization/SDN/data-plane-switches.png)
+
 
 ## SDN Controller
 - Also called: network OS
@@ -14,13 +14,16 @@
 - Interact with network switches "below" via southbound API
 - Implemented as distributed system for performance, scalability, fault-tolerance, robustness
 
-![sdn-contoller](../../../../../static/img/network-virtualization/SDN/sdn-controller.png)
 
 ## Control Applications
 - "Brains" of control: implement control functions using lower-level services, API provided by SND controller
 - Unbundled: can be provided by 3rd party: distinct from routing vendor, or SDN controller
 
-![control-applications](../../../../../static/img/network-virtualization/SDN/control-applications.png)
+<p float="left">
+  <img src="/static/img/network-virtualization/SDN/sdn-controller.png" width="32.05%" />
+  <img src="/static/img/network-virtualization/SDN/data-plane-switches.png" width="32.2%" /> 
+  <img src="/static/img/network-virtualization/SDN/control-applications.png" width="31.8%" />
+</p>
 
 
 ## Implications of SDN
@@ -51,7 +54,7 @@
 ![sdn-stack](../../../../../static/img/network-virtualization/SDN/sdn-stack.png)
 
 ## SDN Network
-![sdn-network](../../../../../static/img/network-virtualization/SDN/sdn-stack.png)
+![sdn-network](../../../../../static/img/network-virtualization/SDN/sdn-network.png)
 
 
 ## References
