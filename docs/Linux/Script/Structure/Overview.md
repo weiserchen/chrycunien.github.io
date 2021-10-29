@@ -4,6 +4,7 @@ Shell script is a series of commands that automate a complex process.
 
 ## Basics
 - `#!/bin/bash`: this lines told that we want to use `/bin/bash` as the interpreter. In not set, it will use the default shell (`zsh` in Mac). The `#!` is called Shebang, the combination of `#` (sharp, pound sign) and `!` (bang, exclamation mark). This linke is really helpful if you collaborate with you team. You always have to specify this line if you don't want to break the process if someone use a different shell in his/her computers.
+- Another way is to use `#/usr/bin/env bash`, which is recommended approach now
 - You will add a lot of commands to document this script unless you want to see a garbage after 3 months later.
 - You can add only commands but also some control commands (if, for) to control the execution flow.
 
