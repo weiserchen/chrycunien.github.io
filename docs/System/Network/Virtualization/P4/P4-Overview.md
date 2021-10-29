@@ -12,7 +12,7 @@ P4 = Protocol-Independent Packet Processors
 - OpenFlow switches reserve TCAM space for all possible fields --> waste TCAM space.
 - The design of hardware (to support more actions) (limited by Openflow protocol) is also hard to change because it’s too expensive.
 
-![SDN-match-fields](../../../../../static/img/network-virtualization/p4/SDN-match-fields.png) ![SDN-action-types](../../../../../static/img/network-virtualization/p4/SDN-action-types.png)
+![SDN-match-fields](../../../../../static/img/network-virtualization/P4/SDN-match-fields.png) ![SDN-action-types](../../../../../static/img/network-virtualization/P4/SDN-action-types.png)
 
 
 
