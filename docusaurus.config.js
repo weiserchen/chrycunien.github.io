@@ -3,8 +3,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Personal Website',
-  tagline: 'Dinosaurs are cool',
+  title: 'Ying-Chiao Chen',
+  tagline: '',
   url: 'https://woodcutter-eric.github.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -43,7 +43,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Socail Account',
+          title: 'Social Account',
           items: [
             {
               label: 'Facebook',

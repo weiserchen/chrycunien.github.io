@@ -4,32 +4,10 @@ sidebar_position: 1
 
 # Note Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+I write down my notes in this section. 
 
-## Getting Started
+Some notes may seem to be incomplete, that's because I haven't complete it yet. (or I just too lazy to do that.)
 
-Get started by **creating a new site**.
+I will try my best to make sure the correctness of my notes, but there is no guarantee. I also put many references under each note. Please refer to it if you find the note is confusing.
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+Considering copyright infringement, please contact yingchiao.chen@gmail.com.
