@@ -1,0 +1,1 @@
+(self.webpackChunkyingchiaochen_website=self.webpackChunkyingchiaochen_website||[]).push([[2535],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u81ea\u6211\u4ecb\u7d39","permalink":"/blog/2021/09/15/self-introduction"}]}')}}]);

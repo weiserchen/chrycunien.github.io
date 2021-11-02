@@ -1,0 +1,1 @@
+(self.webpackChunkyingchiaochen_website=self.webpackChunkyingchiaochen_website||[]).push([[2178],{9427:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/chinese","name":"Chinese","count":1,"permalink":"/blog/tags/chinese"}')}}]);

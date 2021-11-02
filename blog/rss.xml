@@ -1,43 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>My Personal Website Blog</title>
+        <title>Ying-Chiao Chen Blog</title>
         <link>https://woodcutter-eric.github.io/blog</link>
-        <description>My Personal Website Blog</description>
-        <lastBuildDate>Sun, 29 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <description>Ying-Chiao Chen Blog</description>
+        <lastBuildDate>Wed, 15 Sep 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[幽林傳說三部曲感想]]></title>
-            <link>https://woodcutter-eric.github.io/blog/arcadia</link>
-            <guid>arcadia</guid>
-            <pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[測試]]></description>
-            <content:encoded><![CDATA[<p>測試</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://woodcutter-eric.github.io/blog/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Thu, 30 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog features are powered by the blog plugin. Simply add files to the blog directory. It supports tags as well!]]></description>
-            <content:encoded><![CDATA[<p>Blog features are powered by the blog plugin. Simply add files to the <code>blog</code> directory. It supports tags as well!</p><p>Delete the whole directory if you don&#x27;t want the blog features. As simple as that!</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Hello]]></title>
-            <link>https://woodcutter-eric.github.io/blog/hello-world</link>
-            <guid>hello-world</guid>
-            <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Welcome to this blog. This blog is created with Docusaurus 2.]]></description>
-            <content:encoded><![CDATA[<p>Welcome to this blog. This blog is created with <a href="https://docusaurus.io/"><strong>Docusaurus 2</strong></a>.</p><p>This is a test post.</p><p>A whole bunch of other information.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Hola]]></title>
-            <link>https://woodcutter-eric.github.io/blog/hola</link>
-            <guid>hola</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></description>
-            <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
+            <title><![CDATA[自我介紹]]></title>
+            <link>https://woodcutter-eric.github.io/blog/2021/09/15/self-introduction</link>
+            <guid>自我介紹</guid>
+            <pubDate>Wed, 15 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is my self introduction.]]></description>
+            <content:encoded><![CDATA[<h2>背景</h2><p>我來自台灣大學電機系，但是我對軟體比較興趣。在大二上之後決定我以後要往軟體方面發展。之後有嘗試往資安、網路測量、系統等方面嘗試，目前對分散式系統、資料庫系統和網路系統有興趣。</p><h2>個性</h2><p>我還蠻喜歡參加各種活動，對於新事物也很樂意嘗試。自認學習能力很快，可以把一些最近學到的內容和之前的知識整合，並運用在自己的研究和專題上。喜歡一些有挑戰性的事物，碰到問題時也會自己思考，或是上網找答案，看 stackoverflow、別人寫的 blog、 documentation 等等，最後總能逐漸摸索出解決辦法。我也很樂意與大家分享自己整理的一些資料和心得，因此跟同學合作都還蠻愉快的。</p><h2>專案</h2><h3>Apache Submarine</h3><p>我現在有跟系上的同學參與 Apache Submarine 開源專案的開發，目前主要是在做 server 以及 operator 相關的工作。</p><h3>Music Chain</h3><p>我們實作了一個網站，讓音樂創作者可以上傳原創或是二創的音樂，並且在上傳的同時，會利用音樂辨識演算法，將新上傳的音樂和網站中的音樂做比對，而形成音樂之間 Cover 的關係。這個 Cover 的關係我們使用 Direct Acyclic Graph 紀錄在 Ethereum 上。這個專案有獲得 2021 年的台大電機大學部精專獎三獎。</p><h3>Remote Game Controller</h3><p>我們以任天堂 Switch 當作藍本，實作了以 STM32 開發版來接受運動資料，並用 WiFi 與玩家電腦溝通資訊的一個真實找寶藏的遊戲。</p><h3>Picture DB</h3><p>我們在 MongoDB 上實作了一個 wrapper，用來管理照片的取用以及儲存。我們利用標籤的方式以及共識的方法來篩選出更高品質的照片供之後的機器學習的應用使用。 </p><h3>Zhuyin Password Cracker</h3><p>修改網路上開源的破解密碼的工具，包含思考要用什麼方法才能正確地從資料中撈出注音密碼和研究 source code，以及加入我們寫的注音偵測工具。</p><h2>課外活動</h2><h3>系上公關部</h3><p>NTUEE 122th 的公關部長，主要是處理與企業溝通以及拉贊助的事項，以及籌辦 MakeNTU 活動。</p><h3>電機營</h3><p>之前大一大二暑假有參加宿營和電機營，在電機營我負責編輯和教小隊員Python的一些基礎觀念。</p><h3>青樹人社</h3><p>之前我有參加一年的青樹人社，我們會一個禮拜找一天去國中或高中輔導學生，有的時候會開設一些專題讓那邊的同學接觸一些不同於一般國高中會接觸到的東西。</p><h3>美食社</h3><p>今年有參加美食社，每個禮拜會跟同學一起做料理。</p>]]></content:encoded>
         </item>
     </channel>
 </rss>

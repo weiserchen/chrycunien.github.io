@@ -1,1 +1,0 @@
-(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4153],{8820:function(l){"use strict";l.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/small-talk","name":"small-talk","count":1,"permalink":"/blog/tags/small-talk"}')}}]);
