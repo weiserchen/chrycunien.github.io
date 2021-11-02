@@ -348,6 +348,9 @@ local> cd onos-2.5.0/
 local> ./bin/onos
 # Then you will see
 # onos> 
+
+# Then activate openflow
+onos> app activate org.onosproject.openflow
 ```
 - Login to `localhost:8181/onos/ui/login.html` with `onos:rocks`
 - Cleanup
@@ -369,6 +372,33 @@ mininet@mininet-vm> pingall
 - Cleanup
 ```bash
 mininet@mininet-vm> sudo mn -c
+```
+- Topology
+```python
+from mininet.topo import Topo
+
+class MyTopo( Topo ):
+    "3-SW topology example."
+
+    def build( self ):
+        "Create custom topo."
+
+        # Add hosts and switches
+        leftHost = self.addHost( 'h1' )
+        rightHost = self.addHost( 'h2' )
+        leftSwitch = self.addSwitch( 's1' )
+        midSwitch = self.addSwitch( 's3' )
+        rightSwitch = self.addSwitch( 's2' )
+
+        # Add links
+        self.addLink( leftHost, leftSwitch )
+        self.addLink( leftSwitch, rightSwitch )
+        self.addLink( rightSwitch, rightHost )
+        self.addLink( leftSwitch, midSwitch )
+        self.addLink( rightSwitch, midSwitch )
+
+
+topos = { 'mytopo': ( lambda: MyTopo() ) }
 ```
 
 ### Adding Rules
