@@ -21,6 +21,7 @@ P4 = Protocol-Independent Packet Processors
 - Bottom-up design (SDN) V.S. a top-down design (P4)
 - SDN --> programmable control plane
 - P4 --> programmable data plane
+- P4 is commonly used in network security or statistics because it is pretty flexible on manipulate and inspect packets.
 - Goals:
     - Reconfigurability
     - Protocol-independence
@@ -53,9 +54,45 @@ SIGCOMM ’13, Intel FM6000 switch silicon)
 
 ### Processing Steps
 - In traditional switches, these 3 steps are bundled and can not modify.
+- In the first step, the switch will fetch (actually tears out) the header from the packet.
+- Then it will try to match a rule in the forwarding (or flow) table.
+- Last, it takes action to forward, drop, ... the packet.
+
 ![P4-process-steps](../../../../../static/img/network-virtualization/P4/P4-process-steps.png)
 
+## P4 Process Architecture
+- The process model is just like iptables in Linux.
+- You can choose to reconstruct which parts of header in the new one.
+- You can even wrap ip header in tcp header (to only allow p4 switch to handle this packet)
 
+![P4-process-architecture](../../../../../static/img/network-virtualization/P4/P4-process-architecture.png)
+
+## P4 Language Elements
+
+![P4-language-elements](../../../../../static/img/network-virtualization/P4/P4-language-elements.png)
+
+## P4 Libraries
+- P4 Target: An embodiment of a specific hardware implementation
+- P4 Architecture: Provides an interface to program a target via some set of P4-programmable components, externs, fixed components
+- The library of P4 can be divided into 2 parts: core and external
+- The core library is target-independent.
+- The external libraries have different architectural implementation. Different hardware provides different functions, so you need an external libraries for different targets.
+
+## P4 Target Programming
+- The control plan can also means data plane’s control plane, or a remote controller
+- CPU port is for packet exchange between switch and controller (or another switch) (in or out switch)
+- Send to CPU port is to perform packet-in operation, because CPU is used to connect to controller
+- The compiler is usually provided by vendors
+
+![P4-target-programming](../../../../../static/img/network-virtualization/P4/P4-target-programming.png)
+
+## P4 V1Model Architecture
+- Metadata is used to pass information between hardware and p4
+- Hardware looks at metadata in each stage and perform corresponding operations
+- Ingress determines which action to match to.
+- Egress is responsible for how to process the packet again before actually send this packet out
+
+![P4-V1Model](../../../../../static/img/network-virtualization/P4/P4-V1Model.png)
 
 
 ## References

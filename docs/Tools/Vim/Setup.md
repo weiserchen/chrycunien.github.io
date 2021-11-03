@@ -8,6 +8,7 @@
 
 ### General Setup
 - Basic setup
+    - `wrap` is to fold text because the screen cannot fit in.
 ```bash
 set nocompatible
 syntax enable
@@ -28,7 +29,7 @@ set backspace=indent,eol,start
 set history=1000
 set showcmd
 set showmode
-set nowrap
+set wrap
 set autowrite
 set mouse=a
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -41,6 +42,7 @@ set cursorline
 set hlsearch
 set scrolloff=5
 set laststatus=2
+set textwidth=80
 ```
 - Plugins
     - Install Vim-Plug
