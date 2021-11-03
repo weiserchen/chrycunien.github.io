@@ -89,6 +89,17 @@ $ !v
 # Execute the most recent command that start with
 # -> ./test.sh
 $ !./
+
+# Execute the most recent command
+# -> !./test.sh
+$ !!
+
+# Expand to the last part of the previous command
+# But it will also print the command as well in the output
+# echo 'Hello' > test.txt
+# -> cat test.txt
+# -> ... content of test.txt
+$ cat !$
 ```
 
 ### Command Substitution

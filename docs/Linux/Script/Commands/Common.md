@@ -33,6 +33,8 @@ $ man uptime | less
 ```
 
 ## Id
+- The specification of ID is in `/etc/login.defs`
+- You can use `id <username>` to check if a user exists.
 ```bash
 # Get id info
 $ man id
