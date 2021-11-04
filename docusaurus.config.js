@@ -9,7 +9,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/planet.svg',
   organizationName: 'woodcutter-eric', // Usually your GitHub org/user name.
   projectName: 'woodcutter-eric.github.io', // Usually your repo name.
   themeConfig: {
