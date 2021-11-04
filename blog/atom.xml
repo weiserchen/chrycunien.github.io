@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://woodcutter-eric.github.io/blog"/>
     <subtitle>Ying-Chiao Chen Blog</subtitle>
-    <icon>https://woodcutter-eric.github.io/img/favicon.ico</icon>
+    <icon>https://woodcutter-eric.github.io/img/planet.svg</icon>
     <entry>
         <title type="html"><![CDATA[自我介紹]]></title>
         <id>自我介紹</id>
