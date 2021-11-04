@@ -1,9 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Typography, Grid, Button } from "@material-ui/core";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-const Project = ({ description, title, github, stack, url, image, index }) => {
+const Project = ({ description, title, github, stack, resource, url, image, index }) => {
   return (
     <article className="work">
       {/* <div className="work-img" onClick={() => window.open(url)}>
@@ -23,9 +24,19 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
           <a href={github}>
             <FontAwesomeIcon icon={faGithub} className="work-icon" />
           </a>
-          <a href={url}>
+          {/* {resource && <Button
+              style={{ textTransform: "none" }}
+              color="primary"
+              variant="outlined"
+              size="small"
+              href={resource}
+            >
+            <Translate>Resource</Translate>
+          </Button>} */}
+
+          {url && <a href={url}>
             <FontAwesomeIcon icon={faExternalLinkAlt} className="work-icon" />
-          </a>
+          </a>}
         </div>
       </div>
     </article>

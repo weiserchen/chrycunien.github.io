@@ -1,6 +1,9 @@
 import React from "react";
 import Project from "./Project";
 import Translate from "@docusaurus/Translate";
+import MusicChainResource from "../../static/files/music-chain.pdf";
+import PicDBResource from "../../static/files/picdb.pdf";
+import ZhuyinCrackerResource from "../../static/files/zhuyin-cracker.pdf";
 const Projects = () => {
   const works = [
     {
@@ -9,7 +12,8 @@ const Projects = () => {
         "Apache Submarine is an End-to-End Machine Learning Platform to allow data scientists to create end-to-end machine learning workflows. I'm contributing to submarine server and operator.",
       title: "Apache Submarine",
       github: "https://github.com/apache/submarine",
-      url: "http://submarine.apache.org/",
+      // resource: MusicChainResource,
+      url: "https://submarine.apache.org/",
       // image: "img/projects/submarine.png",
       index: 0,
     },
@@ -20,7 +24,7 @@ const Projects = () => {
         "A platform to make original and cover visible and valuable. It leverages many blockchain features to make this copyright-protection idea possible.",
       title: "Music Chain",
       github: "https://github.com/atosystem/MusicChain",
-      url: "../../static/files/music-chain.pdf",
+      url: MusicChainResource,
       // image: "img/Recipe-hub.png",
       index: 1,
     },
@@ -40,7 +44,8 @@ const Projects = () => {
         "We propose an image management system on top of MongoDB to free user from the burden of image management of machine learning.",
       title: "Picture DB",
       github: "https://github.com/yobekili/DB_Final",
-      url: "../../static/files/picdb.pdf",
+      url: PicDBResource,
+      // url: "../../static/files/picdb.pdf",
       // image: "img/APP.jpg",
       index: 3,
     },
@@ -50,7 +55,8 @@ const Projects = () => {
         "We enhance Probabilistic Context-Free Grammar (PCFG) by the Zhuyin feature. Eventually, in evaluation, we can mutate Zhuyin patterns successfully and hit much more real passwords than the other tools.",
       title: "Zhuyin Password Cracker",
       github: "https://github.com/b04902036/zhuyin_searcher",
-      url: "../../static/files/zhuyin-cracker.pdf",
+      url: ZhuyinCrackerResource, 
+      // url: "../../static/files/zhuyin-cracker.pdf",
       // image: "img/APP.jpg",
       index: 4,
     },
