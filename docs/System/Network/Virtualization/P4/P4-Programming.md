@@ -101,7 +101,7 @@ bit<1> checksum_error;
 ### Header Types
 - Ordered collection of members
 - Denoted by `header`
-- Can contain bit<n>, int<n>, and varbit<n>
+- Can contain `bit<n>`, `int<n>`, and `varbit<n>`
 - Byte-aligned
 - Can be valid or invalid
 - Provides several operations to test and set validity bit: `isValid()`, `setValid()`, and `setInvalid()`
