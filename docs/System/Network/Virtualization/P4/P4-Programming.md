@@ -221,7 +221,157 @@ inout standard_metadata_t std_meta) {
 }
 ```
 
-## P415 Controls
+## P416 Controls
+- `apply` is the entry point of a control block
+- `action` is just like function, which can be invoked by `apply`, which can be declared inside a control or globally
+- Many standard arithmetic and logical operations are supported:
+    - `+`, `-`, `*`
+    - `~` ,`&`, `|`, `^`, `>>`, `<<`
+    - `==`, `!=`, `>`, `>=`, `<`, `<=`
+    - No division/modulo
+- Non-standard operations (may not be supported):
+    - Bit-slicing: `[m:l]` (works as l-value too)
+    - Bit Concatenation: `++`
+
+### Example: Reflector
+- This a reflector (echo) example.
+- It just swap the mac address and the port, achieving an echo operation
+```c++
+control MyIngress(inout headers hdr, inout metadata meta,
+    inout standard_metadata_t std_meta) 
+{ 
+    action swap_mac(inout bit<48> src, inout bit<48> dst) {
+        bit<48> tmp = src;
+        src = dst;
+        dst = tmp;
+    }
+
+    apply {
+        swap_mac(hdr.ethernet.srcAddr, hdr.ethernet.dstAddr);
+        std_meta.egress_spec = std_meta.ingress_port; 
+    }
+}
+```
+
+## Table Matching
+- P4 only define the schema of the table
+- `key`: like matching rules (ip, port, …)
+- `action id`: like swap_mac function
+- `action data`: like arguments for swa_mac
+- `action` can see all metadata because actions are defined in the module (like closure)
+- Control plane may be local or remote
+
+![P4-table-match-rule](../../../../../static/img/network-virtualization/P4/P4-table-match-rule.png)
+
+### Example: IPv4_LPM Table
+- This is a ipv4 longest prefix matching (LPM) example.
+- Data Plane (P4) Program
+    - Defines the format of the table
+        - Key 
+        - Action
+        - Action data
+    - Performs the lookup
+    - Executes the chosen action
+- Control Plane (IPstack, Routing protocols)
+    - Populates table entries with specific information
+        - Based on the configuration
+        - Based on automatic discovery
+        - Based on protocol calculations
+- Actions can have two different types of parameters
+    - Directional (from the Data Plane)
+    - Directionless (from the Control Plane)
+- Actions that are called directly:
+    - Only use directional parameters
+- Actions used in tables:
+    - Typically use directionless parameters
+    - May sometimes use directional parameters too
+
+![P4-match-table](../../../../../static/img/network-virtualization/P4/P4-match-table.png)
+
+```c++
+/* core.p4 */
+match_kind {
+    exact,
+    ternary,
+    lpm
+}
+
+/* core.p4 */
+action NoAction() { }
+
+/* basic.p4 */
+/* mark_to_drop() is defined in core.p4 */
+action drop() {
+    mark_to_drop();
+}
+
+/* basic.p4 */
+action ipv4_forward(macAddr_t
+    dstAddr,
+    bit<9> port) {
+    ...
+}
+
+table ipv4_lpm {
+    /* There are several modes other than lpm */
+    key = {
+        hdr.ipv4.dstAddr: lpm;
+    }
+    
+    actions = {
+        ipv4_forward;
+        drop;
+        NoAction;
+    }
+    /* restrict the number of rules in the table */
+    size = 1024;
+    default_action = NoAction();
+}
+
+control MyIngress(
+    inout headers hdr,
+    inout metadata meta,
+    inout standard_metadata_t standard_metadata) {
+    table ipv4_lpm {
+        ... 
+    }
+
+    apply { 
+        ...
+        /*
+        - Tell switch to look for rules in the table 
+        - You can apply several tables in order
+        - Usually, you will use if statement to check whether this packet have some fields to match, or just skip. If you do not do this, it may fall under NoAction(), then the packet is dropped
+        */
+       ipv4_lpm.apply();
+        ... 
+    }
+}
+```
+
+## P416 Deparser
+- Assembles the headers back into a well-formed packet
+- Expressed as a control function
+    - No need for another construct!
+- `packet_out` is defined in core.p4: emit(hdr): serializes header if it is valid
+- If you don’t fetch some header, like tcp, you don’t have to assemble it again
+- Advantages:
+    - Makes deparsing explicit but decouples from parsing
+```c++
+/* From core.p4 */
+extern packet_out {
+        void emit<T>(in T hdr);
+}
+
+/* User Program */
+control DeparserImpl(packet_out packet, in headers hdr) {
+    apply {
+        ...
+        packet.emit(hdr.ethernet);
+        ...
+    } 
+}
+```
 
 ## References
 - This note is based on NTU course - [Network Virtualization and Security](https://nol.ntu.edu.tw/nol/coursesearch/print_table.php?course_id=942%20U0710&class=&dpt_code=9420&ser_no=50698&semester=110-1&lang=CH)

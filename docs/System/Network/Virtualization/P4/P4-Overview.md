@@ -94,6 +94,14 @@ SIGCOMM ’13, Intel FM6000 switch silicon)
 
 ![P4-V1Model](../../../../../static/img/network-virtualization/P4/P4-V1Model.png)
 
+## P4 + SDN
+- P4 program configures forwarding behavior (abstract forwarding model), and express serial dependencies (e.g. ARP/L3 Routing)
+- P4 compiler translates into a target-specific representation
+- OF can still be used to install and query rules once forwarding model is defined
+
+![P4-SDN](../../../../../static/img/network-virtualization/P4/P4-SDN.png)
+![P4-runtime](../../../../../static/img/network-virtualization/P4/P4-runtime.png)
+
 
 ## References
 - This note is based on NTU course - [Network Virtualization and Security](https://nol.ntu.edu.tw/nol/coursesearch/print_table.php?course_id=942%20U0710&class=&dpt_code=9420&ser_no=50698&semester=110-1&lang=CH)
