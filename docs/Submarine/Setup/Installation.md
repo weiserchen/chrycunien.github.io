@@ -36,4 +36,10 @@ $ k9s
 ```bash
 $ kubectl port-forward --address 0.0.0.0 service/submarine-traefik 32080:80
 ```
+```bash
+$ kubectl port-forward --address 0.0.0.0 -n istio-system service/istio-ingressgateway 32080:80
+```
+```bash
+$ kubectl port-forward --address 0.0.0.0 service/submarine-minio-service 9000:9000
+```
 6. Go to `localhost:32080`, the username and the password is both `admin`
