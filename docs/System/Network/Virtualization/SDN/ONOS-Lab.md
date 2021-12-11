@@ -109,7 +109,7 @@ class MyTopo( Topo ):
 topos = { 'mytopo': ( lambda: MyTopo() ) }
 ```
 
-![2-topo](../../../../static/img/network-virtualization/ONOS/2-topo.png)
+![2-topo](../../../../../static/img/network-virtualization/ONOS/2-topo.png)
 
 - Check if the switches has correctly configured
 ```
@@ -333,7 +333,7 @@ In this lab, we create a topology with 3 nodes and 2 end hosts.
 
 Note: Sometimes ONOS just doesn't work well. Try to clean up all resources in ONOS and mininet and restart whole services.
 
-![3-topo](../../../../static/img/network-virtualization/ONOS/3-topo.png)
+![3-topo](../../../../../static/img/network-virtualization/ONOS/3-topo.png)
 
 
 ### ONOS 
@@ -506,19 +506,19 @@ add_rule "${SW3_ID}" "${GEN_DIR}${SW3_DIR}${TO_2_RULE}"
 ## Results
 - Topology screenshot
 
-![3-topo-screenshot](../../../../static/img/network-virtualization/ONOS/3-topo-screenshot.png)
+![3-topo-screenshot](../../../../../static/img/network-virtualization/ONOS/3-topo-screenshot.png)
 - Ping result
 
-![ping-result](../../../../static/img/network-virtualization/ONOS/ping-result.png)
+![ping-result](../../../../../static/img/network-virtualization/ONOS/ping-result.png)
 - SW1 flow table
 
-![sw1-flow-table](../../../../static/img/network-virtualization/ONOS/sw1-flow-table.png)
+![sw1-flow-table](../../../../../static/img/network-virtualization/ONOS/sw1-flow-table.png)
 - SW2 flow table
 
-![sw2-flow-table](../../../../static/img/network-virtualization/ONOS/sw2-flow-table.png)
+![sw2-flow-table](../../../../../static/img/network-virtualization/ONOS/sw2-flow-table.png)
 - SW3 flow table
 
-![sw3-flow-table](../../../../static/img/network-virtualization/ONOS/sw3-flow-table.png)
+![sw3-flow-table](../../../../../static/img/network-virtualization/ONOS/sw3-flow-table.png)
 
 Note: The flow table of `SW1` and `SW2` show be symmetric regarding new rules we just added.
 
